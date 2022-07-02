@@ -1,0 +1,25 @@
+.ctn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.left{
+    height: 100%;
+    width: 17vw;
+}
+.right{
+    height: 100%;
+    width: 83vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin-bottom: 30px;
+    overflow-x: hidden;
+}
+
