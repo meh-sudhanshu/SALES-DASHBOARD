@@ -1,0 +1,24 @@
+.list_wrapper{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.nav_ctn{
+    width: 100vw;
+    height: 10vh;
+}
+.list_ctn{
+    margin-top: 10px;
+    width: 100vw;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 19px;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}

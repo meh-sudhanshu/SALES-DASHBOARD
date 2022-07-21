@@ -1,0 +1,45 @@
+.navbar{
+    width: 100vw;
+    height: 10vh;
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 280px;
+    padding-right: 280px;
+}
+.txt_logo{
+    font-size: 20px;
+    color: #fff;
+    font-family: montserrat,helvetica neue,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 8px;
+}
+.input_btn_ctn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.input{
+    width: 320px;
+    padding: 10px;
+    background-color: #1E1E1E;
+    color: #FFF;
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.input:focus{
+    outline: none;
+}
+.search_btn{
+    padding: 7px;
+    background-color: #1E1E1E;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search_btn:hover{
+    background-color: #FFF;
+    color: #1E1e1e;
+}

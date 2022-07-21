@@ -47,13 +47,13 @@ const Post =()=>{
                     <button className={classes.btn} onClick={setValTo6}>Licence</button>
                     <button className={classes.btn} onClick={setValTo7}>Course Catalog</button>
                 </div>
-                {val ==1 && <CustomerForm/>}
-                {val == 2 && <ReferenceForm/>}
-                {val ==3 && <TrainerForm/>}
-                {val ==4 && <ProfitReportForm/>}
-                {val ==5 && <InvoiceForm/>}
-                {val ==6 && <LicenceForm/>}
-                {val ==7 && <CourseCatalog/>}
+                {val === 1 && <CustomerForm/>}
+                {val === 2 && <ReferenceForm/>}
+                {val === 3 && <TrainerForm/>}
+                {val === 4 && <ProfitReportForm/>}
+                {val === 5 && <InvoiceForm/>}
+                {val === 6 && <LicenceForm/>}
+                {val === 7 && <CourseCatalog/>}
             </div>
         </div>
     )

@@ -1,0 +1,17 @@
+.ctn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+.left{
+    width: 17vw;
+    height: 100vh;
+}
+.right{
+    width: 83vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

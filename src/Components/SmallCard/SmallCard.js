@@ -1,5 +1,5 @@
 import classes from './small_card.module.css'
-import customers_logo from '../../Assets/Logo/customers.png'
+import customers_logo from '../../Assets/Logo/customer.png'
 
 const SmallCard =()=>{
     return(

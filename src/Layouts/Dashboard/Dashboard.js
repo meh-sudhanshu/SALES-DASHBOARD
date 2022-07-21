@@ -1,81 +1,100 @@
-import Navbar from '../../Components/Navbar/Navbar';
-import SmallCard from '../../Components/SmallCard/SmallCard';
+import AreaChart from '../../Components/AreaChart/AreaChart'
 import classes from './dashboard.module.css'
-import DataChart from '../../Components/DataChart/DataChart';
-import MediumCard from '../../Components/MediumCard/MediumCard';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from 'recharts';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import CustomPieChart from '../../Components/PieChart/PieChart'
+import customer_logo from '../../Assets/Logo/customer.png'
+import reference_logo from '../../Assets/Logo/reference.png'
+import trainer_logo from '../../Assets/Logo/trainer.png'
+import profit_report_logo from '../../Assets/Logo/profit_report.png'
+import course_catalog_logo from '../../Assets/Logo/course_catalog.png'
+import invoice_logo from '../../Assets/Logo/invoice.png'
+import licence_logo from '../../Assets/Logo/licence.png'
 const Dashboard =()=>{
-    const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
-    const RADIAN = Math.PI / 180;
-
-
-    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
-        const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-        const x = cx + radius * Math.cos(-midAngle * RADIAN);
-        const y = cy + radius * Math.sin(-midAngle * RADIAN);
-      
-        return (
-          <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-            {`${(percent * 100).toFixed(0)}%`}
-          </text>
-        );
-      };
-      
-
-    const data = [  {name: 'Page A', uv: 400, pv: 2400, amt: 2400},
-                    {name: 'Page A', uv: 600, pv: 2400, amt: 2400},
-                    {name: 'Page A', uv: 200, pv: 2400, amt: 2400},
-                    {name: 'Page A', uv: 200, pv: 2400, amt: 2400},
-                    {name: 'Page A', uv: 800, pv: 2400, amt: 2400}];
-    const data2 = [
-                    { name: 'Group A', value: 400 },
-                    { name: 'Group B', value: 300 },
-                    { name: 'Group C', value: 300 },
-                    { name: 'Group D', value: 200 },
-                      ];
-
-    const chart1 = <BarChart width={500} height={300} data={data}>
-                        <XAxis dataKey="name" stroke="#8884d8" />
-                        <YAxis />
-                        <Tooltip wrapperStyle={{ width: 100, backgroundColor: '#ccc' }} />
-                        <Legend width={100} wrapperStyle={{ top: 40, right: 20, backgroundColor: '#f5f5f5', border: '1px solid #d5d5d5', borderRadius: 3, lineHeight: '40px' }} />
-                        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                        <Bar dataKey="uv" fill="#8884d8" barSize={30} />
-                    </BarChart>
-
-    const chart2 =  <ResponsiveContainer width="100%" height="100%">
-                        <PieChart width={500} height={300}>
-                             <Pie
-                                data={data2}
-                                cx="50%"
-                                cy="50%"
-                                labelLine={false}
-                                label={renderCustomizedLabel}
-                                outerRadius={80}
-                                fill="#8884d8"
-                                dataKey="value"
-                            >
-                                {data.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                                ))}
-                                </Pie>
-                         </PieChart>
-                    </ResponsiveContainer>
-
     return(
         <div className={classes.ctn}>
-            <div className={classes.left}>
-                <Navbar/>
-            </div>
-            <div className={classes.right}>
-               <div className={classes.top}>
-                    <DataChart/>
-               </div>
-               <div className={classes.layer1}>
-                    <MediumCard chart={chart1}/>
-                    
-               </div>
+            <div className={classes.wrapper}>
+                <div className={`${classes.div1} ${classes.grid_div}`}>
+                    <div className={classes.top}>
+                        <div className={classes.top_left}>
+                            <img className={classes.top_logo} src={customer_logo} alt=""/>
+                        </div>
+                        <div className={classes.top_right}>
+                            <h3 className={classes.top_right_heading}>Customer</h3>
+                            <h3 className={classes.top_right_value}>293</h3>
+                        </div>
+                    </div>
+                    <div className={classes.bottom}>
+                        <div className={classes.border_line}></div>
+                        <div className={classes.heading_ctn}>
+                            <h4 className={classes.heading_ctn_heading}>
+                                <span>+31%</span> Since last week
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div className={`${classes.div2} ${classes.grid_div}`}>
+                    <div className={classes.top}>
+                        <div className={classes.top_left}>
+                            <img className={classes.top_logo} src={trainer_logo} alt=""/>
+                        </div>
+                        <div className={classes.top_right}>
+                            <h3 className={classes.top_right_heading}>Trainer</h3>
+                            <h3 className={classes.top_right_value}>93</h3>
+                        </div>
+                    </div>
+                    <div className={classes.bottom}>
+                        <div className={classes.border_line}></div>
+                        <div className={classes.heading_ctn}>
+                            <h4 className={classes.heading_ctn_heading}>
+                                <span>+1%</span> Since last week
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div className={`${classes.div3} ${classes.grid_div}`}>
+                    <div className={classes.top}>
+                        <div className={classes.top_left}>
+                            <img className={classes.top_logo} src={course_catalog_logo} alt=""/>
+                        </div>
+                        <div className={classes.top_right}>
+                            <h3 className={classes.top_right_heading}>Course Catalog</h3>
+                            <h3 className={classes.top_right_value}>33</h3>
+                        </div>
+                    </div>
+                    <div className={classes.bottom}>
+                        <div className={classes.border_line}></div>
+                        <div className={classes.heading_ctn}>
+                            <h4 className={classes.heading_ctn_heading}>
+                                <span>+19%</span> Since last week
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div className={`${classes.div4} ${classes.grid_div}`}>
+                    <div className={classes.top}>
+                        <div className={classes.top_left}>
+                            <img className={classes.top_logo} src={profit_report_logo} alt=""/>
+                        </div>
+                        <div className={classes.top_right}>
+                            <h3 className={classes.top_right_heading}>Profit Reports</h3>
+                            <h3 className={classes.top_right_value}>23</h3>
+                        </div>
+                    </div>
+                    <div className={classes.bottom}>
+                        <div className={classes.border_line}></div>
+                        <div className={classes.heading_ctn}>
+                            <h4 className={classes.heading_ctn_heading}>
+                                <span>+11%</span> Since last week
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div className={`${classes.div5} ${classes.grid_div}`}>
+                    <AreaChart/>
+                </div>
+                <div className={`${classes.div6} ${classes.grid_div}`}>
+                    <CustomPieChart/>
+                    <a className={classes.refresh_btn}>Refresh now</a>
+                </div>
             </div>
         </div>
     )

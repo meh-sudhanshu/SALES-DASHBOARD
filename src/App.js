@@ -1,9 +1,12 @@
 import { BrowserRouter, Routes, Route , Navigate} from "react-router-dom";
-import Dashboard from "./Layouts/Dashboard/Dashboard";
-import Get from "./Layouts/Get/Get";
-import HelpAndSupport from "./Layouts/HelpandSupport/HelpAndSupport";
-import Post from "./Layouts/Post/Post";
-import Profile from "./Layouts/Profile/Profile";
+import Homepage from "./Layouts/Homepage/Homepage";
+import CustomerList from './Layouts/CustomerList/CustomerList'
+import ReferenceList from './Layouts/ReferenceList/ReferenceList'
+import TrainerList from './Layouts/TrainerList/TrainerList'
+import ProfitReports from './Layouts/ProfitReportsList/ProfitReportsList'
+import InvoiceList from './Layouts/InvoiceList/InvoiveList'
+import LicenceList from './Layouts/LicenceList/LicenceList'
+import CourseCatalogList from './Layouts/CourseCatalogList/CourseCatalogList'
 function App() {
 
   
@@ -11,11 +14,14 @@ function App() {
     <div className="App">
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Dashboard/>}/>
-                <Route path="/get" element={<Get/>}/>
-                <Route path="/post" element={<Post/>}/>
-                <Route path="/profile" element={<Profile/>}/>
-                <Route path="/helpAndSupport" element={<HelpAndSupport/>}/>
+                <Route path="/" element={<Homepage/>}/>
+                <Route path='/customerList' element={<CustomerList/>}/>
+                <Route path='/referenceList' element={<ReferenceList/>}/>
+                <Route path='/trainerList' element={<TrainerList/>}/>
+                <Route path='/profitReports' element={<ProfitReports/>}/>
+                <Route path='/invoiceList' element={<InvoiceList/>}/>
+                <Route path='/licenceList' element={<LicenceList/>}/>
+                <Route path='/courseCatalogList' element={<CourseCatalogList/>}/>
             </Routes>
         </BrowserRouter>
     </div>

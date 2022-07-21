@@ -1,70 +1,50 @@
 import React, { PureComponent } from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
-import '../../Assets/GlobalCSS/global.css'
-const data = [
-  {
-    subject:"Customer",
-    A: 120,
-    B: 110,
-    fullMark: 150,
-  },
-  {
-    subject: 'Reference',
-    A: 98,
-    B: 130,
-    fullMark: 150,
-  },
-  {
-    subject: 'Trainer',
-    A: 86,
-    B: 130,
-    fullMark: 150,
-  },
-  {
-    subject: 'Profit Report',
-    A: 99,
-    B: 100,
-    fullMark: 150,
-  },
-  {
-    subject: 'Invoice',
-    A: 85,
-    B: 90,
-    fullMark: 150,
-  },
-  {
-    subject: 'Licence',
-    A: 65,
-    B: 85,
-    fullMark: 150,
-  },
-  {
-    subject: 'Course Catalog',
-    A: 65,
-    B: 85,
-    fullMark: 150,
-  }
-];
-const clickHandler =(event)=>{
-    console.log(event.value)
-  }
+import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 
-const style={
-    cursor:"pointer",
-}
-export default class Chart extends PureComponent {
- 
+const data = [
+  { name: 'Group A', value: 400 },
+  { name: 'Group B', value: 300 },
+  { name: 'Group C', value: 300 },
+  { name: 'Group D', value: 200 },
+];
+
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+
+const RADIAN = Math.PI / 180;
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+      {`${(percent * 100).toFixed(0)}%`}
+    </text>
+  );
+};
+
+export default class CustomPieChart extends PureComponent {
+  static demoUrl = 'https://codesandbox.io/s/pie-chart-with-customized-label-dlhhj';
 
   render() {
     return (
-       
-      <ResponsiveContainer width="80%" height="80%">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey="subject" onClick={clickHandler} style={style} />
-          <PolarRadiusAxis />
-          <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-        </RadarChart>
+      <ResponsiveContainer width="100%" height="70%">
+        <PieChart width={400} height={400}>
+          <Pie
+            data={data}
+            cx="50%"
+            cy="50%"
+            labelLine={false}
+            label={renderCustomizedLabel}
+            outerRadius={80}
+            fill="#8884d8"
+            dataKey="value"
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+        </PieChart>
       </ResponsiveContainer>
     );
   }

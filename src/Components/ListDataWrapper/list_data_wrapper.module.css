@@ -1,0 +1,107 @@
+.ctn{
+    width: 30vw;
+    min-height: 30vh;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.top{
+    width: 100%;
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    position: relative;
+    top: -10px;
+}
+.row{
+    padding-left: 20px;
+    width:30vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    font-family: 'lato';
+}
+
+.dot:hover{
+    background-color: #3CCF4E;
+}
+
+.btn{
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+}
+.update_btn{
+    background-color: #6E85B7;
+    color: #FFF;
+}
+.delete_btn{
+    background-color: #D61C4E;
+    color: #FFF;
+}
+.delete_overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1E1E1E;
+    opacity: 0.5;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_ctn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 20vh;
+    background-color: #FFF;
+    gap: 30PX;
+}
+
+.heading{
+    font-family: 'lato';
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: #1E1E1E;
+}
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.btn{
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #FFF;
+    font-family: 'lato';
+}
+.cnf_delete{
+    background-color: #D61C4E;
+}
+.cancel_delete{
+    background-color: #3CCF4E;
+}
